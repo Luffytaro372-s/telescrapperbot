@@ -9,7 +9,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the application code
 COPY main.py .
 
-# Create directory for session files
+# Copy the session file
+COPY user_session.session .
+
+# Create directory for session files and data
 RUN mkdir -p /app/data
 
 # Run the bot
