@@ -1,0 +1,19 @@
+app = "telegram-code-scraper"
+primary_region = "iad"
+
+[build]
+
+[env]
+  PYTHONUNBUFFERED = "1"
+
+[[mounts]]
+  source = "data_volume"
+  destination = "/app/data"
+
+[processes]
+  app = "python main.py"
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256
